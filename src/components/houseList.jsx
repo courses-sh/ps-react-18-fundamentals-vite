@@ -1,3 +1,5 @@
+import HouseRow from "@/components/houseRow";
+
 const houses = [
   {
     id: 1,
@@ -30,13 +32,7 @@ const HouseList = () => {
           </tr>
         </thead>
         <tbody>
-          {houses.map((house) => (
-            <tr key={house.id}>
-              <td>{house.address}</td>
-              <td>{house.country}</td>
-              <td>{house.price}</td>
-            </tr>
-          ))}
+          {houses.map((house) => <HouseRow key={house.id} house={house} />)}
         </tbody>
       </table>
     </>
