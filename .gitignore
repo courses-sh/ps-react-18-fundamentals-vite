@@ -3,6 +3,8 @@
 .idea/**
 .code
 .code/**
+.openidea
+.openidea/**
 
 ### dependencies
 /node_modules
