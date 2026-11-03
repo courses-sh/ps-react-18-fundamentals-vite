@@ -1,4 +1,4 @@
-import HouseRow from "@/components/houseRow";
+import HouseRowMem from "@/components/houseRow";
 import { useState } from "react";
 
 const housesArray = [
@@ -49,7 +49,7 @@ const HouseList = () => {
         </thead>
         <tbody>
         {houses.map((house) => (
-          <HouseRow key={house.id} house={house}/>
+          <HouseRowMem key={house.id} house={house}/>
         ))}
         </tbody>
       </table>
