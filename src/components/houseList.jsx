@@ -23,7 +23,7 @@ const HouseList = () => {
     setHouses([
       ...houses,
       {
-        id: 3,
+        id: houses.length + 1,
         address: "32 Valley Way, New York",
         country: "USA",
         price: 1000000,
