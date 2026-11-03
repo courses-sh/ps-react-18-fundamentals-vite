@@ -18,8 +18,6 @@ const housesArray = [
 
 const HouseList = () => {
   const [houses, setHouses] = useState(housesArray);
-  const [counter, setCounter] = useState(0);
-  const addCount = () => setCounter(counter + 1);
 
   const addHouse = () => {
     setHouses([
@@ -56,16 +54,9 @@ const HouseList = () => {
         </tbody>
       </table>
 
-      <br/>
-      <strong>Count:</strong> {counter}
-      <br/>
-      <br/>
-
       <button className="btn btn-primary" onClick={addHouse}>
         Add House
       </button>
-      {' '}
-      <button className="btn btn-primary" onClick={addCount}>Increase Counter</button>
     </>
   )
 }
