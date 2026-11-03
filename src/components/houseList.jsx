@@ -1,6 +1,7 @@
 import HouseRow from "@/components/houseRow";
+import { useState } from "react";
 
-const houses = [
+const housesArray = [
   {
     id: 1,
     address: "12 Valley of Kings, Geneva",
@@ -16,7 +17,24 @@ const houses = [
 ];
 
 const HouseList = () => {
+  const [houses, setHouses] = useState(housesArray);
+  const [counter, setCounter] = useState(0);
+  const addCount = () => setCounter(counter + 1);
+
+  const addHouse = () => {
+    setHouses([
+      ...houses,
+      {
+        id: 3,
+        address: "32 Valley Way, New York",
+        country: "USA",
+        price: 1000000,
+      },
+    ]);
+  }
+
   return (
+    // this is a React Fragment
     <>
       <div className="row mb-2">
         <h5 className="themeFontColor text-center">
@@ -25,16 +43,29 @@ const HouseList = () => {
       </div>
       <table className="table table-hover">
         <thead>
-          <tr>
-            <th>Address</th>
-            <th>Country</th>
-            <th>Asking Price</th>
-          </tr>
+        <tr>
+          <th>Address</th>
+          <th>Country</th>
+          <th>Asking Price</th>
+        </tr>
         </thead>
         <tbody>
-          {houses.map((house) => <HouseRow key={house.id} house={house} />)}
+        {houses.map((house) => (
+          <HouseRow key={house.id} house={house}/>
+        ))}
         </tbody>
       </table>
+
+      <br/>
+      <strong>Count:</strong> {counter}
+      <br/>
+      <br/>
+
+      <button className="btn btn-primary" onClick={addHouse}>
+        Add House
+      </button>
+      {' '}
+      <button className="btn btn-primary" onClick={addCount}>Increase Counter</button>
     </>
   )
 }
