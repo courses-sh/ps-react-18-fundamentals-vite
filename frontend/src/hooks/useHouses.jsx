@@ -1,24 +1,17 @@
 import { useEffect, useState } from "react";
-import loadingStatus from "@/helpers/loadingStatus";
+import useGetRequest from "@/hooks/useGetRequest";
 
 const useHouses = () => {
   const [houses, setHouses] = useState([]);
-  const [loadingState, setLoadingState] = useState(loadingStatus.isLoading);
+  const {get, loadingState} = useGetRequest("/api/houses");
 
   useEffect(() => {
     const fetchHouses = async () => {
-      setLoadingState(loadingStatus.isLoading);
-      try {
-        const response = await fetch("/api/houses");
-        const houses = await response.json();
-        setHouses(houses);
-        setLoadingState(loadingStatus.loaded)
-      } catch {
-        setLoadingState(loadingStatus.hasErrored);
-      }
+      const houses = await get();
+      setHouses(houses);
     };
     void fetchHouses();
-  }, []);
+  }, [get]);
 
   return {houses, setHouses, loadingState};
 }
