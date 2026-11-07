@@ -15,11 +15,11 @@ const AddBid = ({house, addBid}) => {
   };
 
   return (
-    <div className="row">
+    <div className="input-group">
       <div className="col-5">
         <input
           id="bidder"
-          className="h-100"
+          className="form-control"
           type="text"
           value={newBid.bidder}
           onChange={(e) => setNewBid({...newBid, bidder: e.target.value})}
@@ -29,7 +29,7 @@ const AddBid = ({house, addBid}) => {
       <div className="col-5">
         <input
           id="amount"
-          className="h-100"
+          className="form-control"
           type="number"
           value={newBid.amount}
           onChange={(e) =>
