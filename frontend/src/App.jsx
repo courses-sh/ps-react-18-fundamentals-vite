@@ -5,6 +5,11 @@ import { useState } from "react";
 
 const App = () => {
   const [selectedHouse, setSelectedHouse] = useState();
+
+  const setSelectedHouseWrapper = (house) => {
+    setSelectedHouse(house);
+  }
+
   return (
     <>
       <Banner>
@@ -12,7 +17,7 @@ const App = () => {
       </Banner>
       {selectedHouse ?
         <House house={selectedHouse}/> :
-        <HouseList selectHouse={setSelectedHouse}/>}
+        <HouseList selectHouse={setSelectedHouseWrapper}/>}
     </>
   );
 }
