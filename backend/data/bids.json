@@ -77,30 +77,6 @@
       "bidder": "Roland",
       "amount": 203000,
       "id": 13
-    },
-    {
-      "houseId": 1,
-      "bidder": "dev",
-      "amount": 500000,
-      "id": 14
-    },
-    {
-      "houseId": 1,
-      "bidder": "",
-      "amount": 0,
-      "id": 15
-    },
-    {
-      "houseId": 1,
-      "bidder": "",
-      "amount": 0,
-      "id": 16
-    },
-    {
-      "houseId": 1,
-      "bidder": "",
-      "amount": 0,
-      "id": 17
     }
   ]
 }
